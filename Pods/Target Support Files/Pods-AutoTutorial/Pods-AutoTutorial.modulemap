@@ -1,0 +1,6 @@
+framework module Pods_AutoTutorial {
+  umbrella header "Pods-AutoTutorial-umbrella.h"
+
+  export *
+  module * { export * }
+}
