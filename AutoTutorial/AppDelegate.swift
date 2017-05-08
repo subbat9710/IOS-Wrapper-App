@@ -46,29 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     }
     
-    
-
-//    //for facebook
-//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-//        
-//        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
-//        application,
-//        open: url,
-//        sourceApplication: sourceApplication,
-//        annotation: annotation)
-//        
-//        return facebookDidHandle
-//    }
-//    //for google
-//    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:])
-//        -> Bool {
-//            return GIDSignIn.sharedInstance().handle(url,
-//                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-//                                                     annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-//    
-//            
-//    }
-    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
             print(error.localizedDescription)
@@ -93,9 +70,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     
-//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-//        
-//    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
 
     
 
