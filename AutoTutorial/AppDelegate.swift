@@ -27,33 +27,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         })
             
         FIRApp.configure() //firebase authenticating code
-        //facebook
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         //for google
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        //facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+            GIDSignIn.sharedInstance().handle(url,
+                                                    sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                             annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        return handled
+    
+    }
+    
+    
 
-    //for facebook
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
-        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
-        application,
-        open: url,
-        sourceApplication: sourceApplication,
-        annotation: annotation)
-        
-        return facebookDidHandle
-    }
-    //for google
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-    }
+//    //for facebook
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        
+//        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
+//        application,
+//        open: url,
+//        sourceApplication: sourceApplication,
+//        annotation: annotation)
+//        
+//        return facebookDidHandle
+//    }
+//    //for google
+//    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:])
+//        -> Bool {
+//            return GIDSignIn.sharedInstance().handle(url,
+//                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+//                                                     annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+//    
+//            
+//    }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
@@ -79,9 +93,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
-    }
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+//        
+//    }
 
     
 
