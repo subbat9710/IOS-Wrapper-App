@@ -118,3 +118,16 @@ You can use the signOut method of the GIDSignIn object to sign out your user on 
 @IBAction func didTapSignOut(sender: AnyObject) {
   GIDSignIn.sharedInstance().signOut()
 }
+
+Integrating Facebook in IOS
+Step 1: Configure Facebook App Settings for iOS
+Step 2: Download Facebook SDK for iOS
+Step 3: Add SDK to Project
+Step 4: Configure Xcode Project
+Step 5: Connect App Delegate
+Step 6: Add App Events
+
+References: For integrating google login
+https://developers.google.com/identity/sign-in/ios/
+For integrating facebook login
+https://developers.facebook.com/docs/facebook-login/io
