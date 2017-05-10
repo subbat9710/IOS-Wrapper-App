@@ -18,12 +18,9 @@ Requrements for the Google Login.
 Open your project configuration: double-click the project name in the left tree view. Select your app from the TARGETS section, then select the Info tab, and expand the URL Types section.
 Click the + button, and add a URL scheme for your reversed client ID. To find this value, open the GoogleService-Info.plist configuration file, and look for the REVERSED_CLIENT_ID key. Copy the value of that key, and paste it into the URL Schemes box on the configuration page. Leave the other fields blank.
 
-
 Integrating Google Sign-In into your iOS app
 
 Google Sign-In manages the OAuth 2.0 flow and token lifecycle, simplifying your integration with Google APIs.
-
- Objective-C   Swift
 
 Before you begin
 
@@ -42,17 +39,6 @@ In your app delegate (AppDelegate.swift), declare that this class implements the
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 AppDelegate.swift
 In your app delegate's application:didFinishLaunchingWithOptions: method, configure the GGLContext shared instance and set the sign-in delegate.
-func application(application: UIApplication,
-  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Initialize sign-in
-    var configureError: NSError?
-    GGLContext.sharedInstance().configureWithError(&configureError)
-    assert(configureError == nil, "Error configuring Google services: \(configureError)")
-
-    GIDSignIn.sharedInstance().delegate = self
-
-    return true
-}
 AppDelegate.swift
 Note: If you manually installed the SDK, you should instead configure the GIDSignIn object directly, using the client ID found in the GoogleService-Info.plist file: 
 GIDSignIn.sharedInstance().clientID = kClientID
@@ -73,15 +59,7 @@ func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
       let email = user.profile.email
       // ...
     } else {
-      print("\(error.localizedDescription)")
-    }
-}
-AppDelegate.swift
-func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
-  withError error: NSError!) {
-    // Perform any operations when the user disconnects from app here.
-    // ...
-}
+
 AppDelegate.swift
 Note: The Sign-In SDK automatically acquires access tokens, but the access tokens will be refreshed only when you call signIn or signInSilently. To explicitly refresh the access token, call the refreshTokensWithHandler: method. If you need the access token and want the SDK to automatically handle refreshing it, you can use the getTokensWithHandler: method.
 Important: If you need to pass the currently signed-in user to a backend server, send the user's ID token to your backend server and validate the token on the server.
@@ -100,9 +78,6 @@ override func viewDidLoad() {
 
   // Uncomment to automatically sign in the user.
   //GIDSignIn.sharedInstance().signInSilently()
-
-  // TODO(developer) Configure the sign-in button look/feel
-  // ...
 }
 ViewController.swift
 Note: When users silently sign in, the Sign-In SDK automatically acquires access tokens and automatically refreshes them when necessary. If you need the access token and want the SDK to automatically handle refreshing it, you can use the getAccessTokenWithHandler: method. To explicitly refresh the access token, call the refreshAccessTokenWithHandler: method.
@@ -143,4 +118,3 @@ You can use the signOut method of the GIDSignIn object to sign out your user on 
 @IBAction func didTapSignOut(sender: AnyObject) {
   GIDSignIn.sharedInstance().signOut()
 }
-ViewController.swift
