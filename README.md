@@ -12,4 +12,4 @@ This project includes complete wrapper of IOS app with Emali/Password, Facebook 
 Whant to create a side scrollview with navigations?
 Go to Top of Toolbar:
 Editor > Embed in > Navigation Controller
-Drag UIView to View Controller 
+Drag UIView to View Controller /Users/tularamsubba/Desktop/UIView.png
