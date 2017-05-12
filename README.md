@@ -2,7 +2,7 @@ This project includes complete wrapper of IOS app with Emali/Password, Facebook 
 1. Download xcode from App store on mac(prefered latest version available).
 2. Create a new xcode project.
 3. Select single view application > Next
-        1. Product name: "Name of Project"
+        1. Product name: "Name of Project"  
         2. Team: Is your development team(You might need to create an apple ID) 
         3. Language: Swift
         4. Devices: Universal > Next
