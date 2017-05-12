@@ -1,5 +1,5 @@
 # IOS-Wrapper app
-Project: Creating a IOS wrapper app for Mined Minds.
+Project: Creating a IOS wrapper app for Mined Minds. 
 
 Team: Sheri Dyson, John Verbosky, Michael Ciletti, Teela Subba
 
