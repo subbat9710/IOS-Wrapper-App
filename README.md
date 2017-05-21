@@ -1,4 +1,8 @@
 #IOS-Wrapperapp
+Project: Creating a IOS wrapper app for Mined Minds. 
+=======
+Team: Sheri Dyson, John Verbosky, Michael Ciletti, Teela Subba
+
 This project includes complete wrapper of IOS app with Emali/Password, Facebook and Google auto login functionality. Following points are the ways to setup the App.
 
 1. Download xcode from App store on mac(prefered latest version available).
@@ -32,5 +36,7 @@ Requirements for Facebook login.
 -> Need facebook developer account.
 
 -> Downloads SDK from facebook developer page.
+
+-> For more details https://developers.facebook.com/docs/facebook-login/ios
 
 -> For more details https://developers.facebook.com/docs/facebook-login/ios
