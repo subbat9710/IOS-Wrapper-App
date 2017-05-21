@@ -1,4 +1,3 @@
-#IOS-Wrapperapp
 Project: Creating a IOS wrapper app for Mined Minds. 
 =======
 Team: Sheri Dyson, John Verbosky, Michael Ciletti, Teela Subba
@@ -36,7 +35,5 @@ Requirements for Facebook login.
 -> Need facebook developer account.
 
 -> Downloads SDK from facebook developer page.
-
--> For more details https://developers.facebook.com/docs/facebook-login/ios
 
 -> For more details https://developers.facebook.com/docs/facebook-login/ios
