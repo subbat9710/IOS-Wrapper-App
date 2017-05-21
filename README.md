@@ -1,4 +1,6 @@
+#IOS-Wrapperapp
 This project includes complete wrapper of IOS app with Emali/Password, Facebook and Google auto login functionality. Following points are the ways to setup the App.
+
 1. Download xcode from App store on mac(prefered latest version available).
 2. Create a new xcode project.
 3. Select single view application > Next
@@ -16,7 +18,7 @@ Drag UIView to View Controller
 To see deatils about layout open AutoTutorial.xcworkspace folder.
 
 Requrements for the Google Login.
-
+=======
  -> Need google account.
 
  -> Need firebase account.
@@ -24,7 +26,7 @@ Requrements for the Google Login.
  -> For more details https://firebase.google.com/docs/auth/android/google-signin
 
 Requirements for Facebook login.
-
+=======
 -> Need facebook account.
 
 -> Need facebook developer account.
