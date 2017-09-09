@@ -1,5 +1,4 @@
-<h1>Project: Creating a IOS wrapper app for Mined Minds.</h1>
-=======
+<h1>Project: Creating a IOS wrapper app for Mined Minds.</h1><hr>
 <b>Team: Sheri Dyson, John Verbosky, Michael Ciletti, Teela Subba</b>
 
 This project includes complete wrapper of IOS app with Emali/Password, Facebook and Google auto login functionality. Following points are the ways to setup the App.
