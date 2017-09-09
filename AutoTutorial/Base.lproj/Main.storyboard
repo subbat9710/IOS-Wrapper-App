@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="AutoTutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="16" y="199.5" width="343" height="268"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kBH-aJ-hCp">
-                                        <rect key="frame" x="100" y="0.0" width="143" height="37"/>
+                                        <rect key="frame" x="80" y="0.0" width="183" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="wga-Pt-5KE"/>
                                         </constraints>
@@ -35,9 +35,6 @@
                                             <segment title="Register"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="signInSelectorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="B7v-we-eOh"/>
-                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-tm-Akq">
                                         <rect key="frame" x="141" y="61" width="61.5" height="24"/>
@@ -45,7 +42,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8yV-rG-E0t">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8yV-rG-E0t">
                                         <rect key="frame" x="0.0" y="110" width="343" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="WFY-EI-vga"/>
@@ -54,7 +51,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-Vs-Rfw">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-Vs-Rfw">
                                         <rect key="frame" x="0.0" y="171" width="343" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="RUZ-6p-kg5"/>
@@ -63,17 +60,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-eE-3e7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-eE-3e7" customClass="RoundedOutlineButton" customModule="AutoTutorial" customModuleProvider="target">
                                         <rect key="frame" x="100" y="232" width="143" height="36"/>
-                                        <color key="backgroundColor" red="0.18682670179999999" green="0.90516183039999998" blue="0.70842633929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <size key="titleShadowOffset" width="14" height="14"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="signInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPe-2i-67e"/>
-                                        </connections>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -82,9 +86,9 @@
                                     <constraint firstAttribute="trailing" secondItem="NaS-eE-3e7" secondAttribute="trailing" constant="100" id="B3z-mD-LBs"/>
                                     <constraint firstItem="NaS-eE-3e7" firstAttribute="leading" secondItem="bV2-Te-ciy" secondAttribute="leading" constant="100" id="OxU-s8-CcT"/>
                                     <constraint firstItem="NmA-Vs-Rfw" firstAttribute="leading" secondItem="bV2-Te-ciy" secondAttribute="leading" id="Qxg-xP-5sW"/>
-                                    <constraint firstAttribute="trailing" secondItem="kBH-aJ-hCp" secondAttribute="trailing" constant="100" id="Z9C-XP-67Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="kBH-aJ-hCp" secondAttribute="trailing" constant="80" id="Z9C-XP-67Z"/>
                                     <constraint firstItem="8yV-rG-E0t" firstAttribute="leading" secondItem="bV2-Te-ciy" secondAttribute="leading" id="ZaE-pR-rGg"/>
-                                    <constraint firstItem="kBH-aJ-hCp" firstAttribute="leading" secondItem="bV2-Te-ciy" secondAttribute="leading" constant="100" id="uge-ar-uez"/>
+                                    <constraint firstItem="kBH-aJ-hCp" firstAttribute="leading" secondItem="bV2-Te-ciy" secondAttribute="leading" constant="80" id="uge-ar-uez"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -96,11 +100,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="8yV-rG-E0t" id="aOl-kZ-7Df"/>
-                        <outlet property="passwordTextField" destination="NmA-Vs-Rfw" id="laM-pe-e40"/>
-                        <outlet property="signInButton" destination="NaS-eE-3e7" id="DIg-Y4-K2C"/>
-                        <outlet property="signInLabel" destination="mCj-tm-Akq" id="ocn-DB-559"/>
-                        <outlet property="signInSelector" destination="kBH-aJ-hCp" id="Tjs-nY-GkP"/>
                         <segue destination="331-V8-VI0" kind="show" identifier="goToHome" id="UCT-2U-nOK"/>
                     </connections>
                 </viewController>
@@ -556,7 +555,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="331-V8-VI0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u9Q-0u-fGb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u9Q-0u-fGb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -581,7 +580,7 @@
         <image name="notifications" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dRh-MK-u0h"/>
+        <segue reference="UCT-2U-nOK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

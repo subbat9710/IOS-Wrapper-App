@@ -14,7 +14,7 @@ class Request: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url=URL(string: "http://mentor-mentee-app.herokuapp.com/login")
+        let url=URL(string: "http://mentor-mentee-app-mobile.herokuapp.com/requests")
         requestWebView.loadRequest(URLRequest(url: url!))
 
            }

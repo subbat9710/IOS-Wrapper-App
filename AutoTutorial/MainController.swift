@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import LocalAuthentication
 
 class MainController: UIViewController {
     
@@ -23,10 +24,11 @@ class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myScrollView.contentSize.height = 1000
         myShadowView.layer.shadowOpacity = 1
         myShadowView.layer.shadowRadius = 6
-        let url=URL(string: "http://mentor-mentee-app.herokuapp.com/")
+        let url=URL(string: "http://mentor-mentee-app-mobile.herokuapp.com/")
         myWebView.loadRequest(URLRequest(url: url!))
 
     }
@@ -45,6 +47,7 @@ class MainController: UIViewController {
         } catch {
             print("There was a problem logging out")
         }
+
     }
   
  // It can hide and show the menu 

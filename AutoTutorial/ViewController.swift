@@ -11,6 +11,7 @@ import Firebase //to access firebase to app
 import FirebaseAuth //to autorise from firebase
 import FBSDKLoginKit // to access facebook login
 import GoogleSignIn  // to access google login
+import LocalAuthentication
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDelegate {
     
@@ -29,19 +30,20 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         setupGoogleButtons()
     }
     
+    //it helps to place google button on the login screen.
     fileprivate func setupGoogleButtons() {
                 let googleButton = GIDSignInButton()
-                googleButton.frame = CGRect(x: 16, y: 600, width: view.frame.width - 32, height: 40)
+                googleButton.frame = CGRect(x: 16, y: 500, width: view.frame.width - 32, height: 40)
                 view.addSubview(googleButton)
         
                 GIDSignIn.sharedInstance().uiDelegate = self
         
     }
-    
+    //it helps to place google button on the login screen.
     fileprivate func setupFacebookButtons() {
                 let loginButton = FBSDKLoginButton()
                 view.addSubview(loginButton)
-                loginButton.frame = CGRect(x: 16, y: 550, width: view.frame.width - 32, height: 40)
+                loginButton.frame = CGRect(x: 16, y: 450, width: view.frame.width - 32, height: 40)
         
                 loginButton.delegate = self
         
@@ -94,6 +96,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
 
         }
     }
+    
 
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
         isSignIn = !isSignIn
@@ -120,6 +123,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                     }
                     else {
                         //Error: check error and show message
+                        print("Password is wrong")
                     }
                 })
             }
@@ -133,6 +137,23 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             }
             
         }
+        
+        let myContext = LAContext()
+        var authError: NSError? = nil
+        if myContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+            myContext.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Authenticate to log into your MinedMinds account") { (success, evaluateError) in
+                if (success) {
+                    //User authenticated successfully.
+                    print ("TouchID is authenticated successfully.")
+                } else {
+                    //User did not authenticated successfully.
+                    print ("TouchID Do not Authenticate")
+                }
+            }
+        } else {
+            //Could not evaluate policy; look at authError and present an appropriate message to user
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -140,5 +161,4 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         passwordTextField.resignFirstResponder()
     }
     
-}
-
+   }
