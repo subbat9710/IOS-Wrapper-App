@@ -6,29 +6,27 @@ This project includes complete wrapper of IOS app with Emali/Password, Facebook 
 <li>Download xcode from App store on mac(prefered latest version available).</li>
 <li>Create a new xcode project.</li>
 <li>Select single view application > Next</li>
-        <p>1. Product name: "Name of Project"</p> 
-        <p>2. Team: Is your development team(You might need to create an apple ID)</p>
-        <p>3. Language: Swift</p>
-        <p>4. Devices: Universal > Next</p>
+        1. Product name: "Name of Project" <br> 
+        2. Team: Is your development team(You might need to create an apple ID) <br>
+        3. Language: Swift <br>
+        4. Devices: Universal > Next
 <li>Place where you want to save > Create</li>
 <li>Most of the layout will happen in 'Main Storyboard'(Found in left side of the project)</li>
 
-Whant to create a side scrollview with navigations?
+<h2>Whant to create a side scrollview with navigations?</h2>
 Go to Top of Toolbar:
 Editor > Embed in > Navigation Controller
 Drag UIView to View Controller 
 To see deatils about layout open AutoTutorial.xcworkspace folder.
 
-Requrements for the Google Login.
-=======
+<h1>Requrements for the Google Login.</h1>
  -> Need google account.
 
  -> Need firebase account.
 
  -> For more details https://firebase.google.com/docs/auth/android/google-signin
 
-Requirements for Facebook login.
-=======
+<h1>Requirements for Facebook login.</h1>
 -> Need facebook account.
 
 -> Need facebook developer account.
