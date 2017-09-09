@@ -6,9 +6,9 @@ This project includes complete wrapper of IOS app with Emali/Password, Facebook 
 <li>Download xcode from App store on mac(prefered latest version available).</li>
 <li>Create a new xcode project.</li>
 <li>Select single view application > Next</li>
-        1. Product name: "Name of Project"  
-        2. Team: Is your development team(You might need to create an apple ID) 
-        3. Language: Swift
+        1. Product name: "Name of Project" <br> 
+        2. Team: Is your development team(You might need to create an apple ID) <br>
+        3. Language: Swift <br>
         4. Devices: Universal > Next
 <li>Place where you want to save > Create</li>
 <li>Most of the layout will happen in 'Main Storyboard'(Found in left side of the project)</li>
