@@ -19,14 +19,14 @@ Editor > Embed in > Navigation Controller
 Drag UIView to View Controller 
 To see deatils about layout open AutoTutorial.xcworkspace folder.
 
-<h1>Requrements for the Google Login.</h1>
+<h2>Requrements for the Google Login.</h2>
  -> Need google account.
 
  -> Need firebase account.
 
  -> For more details https://firebase.google.com/docs/auth/android/google-signin
 
-<h1>Requirements for Facebook login.</h1>
+<h2>Requirements for Facebook login.</h2>
 -> Need facebook account.
 
 -> Need facebook developer account.
